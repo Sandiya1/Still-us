@@ -1,0 +1,98 @@
+
+.letters {
+  height: 100vh;
+  width: 100%;
+  background-repeat: repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* POSTCARD */
+.postcard {
+  width: 520px;
+  height: 340px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+/* COMMON */
+.postcard-front,
+.postcard-inside {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  position: absolute;
+  backface-visibility: hidden;
+  border: 3px solid #1e2a5a;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  transition: transform 0.9s ease;
+}
+
+/* FRONT SIDE */
+.postcard-front {
+  background: linear-gradient(135deg, #e6f3ff, #ffffff);
+}
+
+.postcard-front h2 {
+  font-family: "Pacifico", cursive;
+  font-size: 36px;
+  color: #8ec7f0;
+  -webkit-text-stroke: 1px #1e2a5a;
+}
+
+.stamp {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 32px;
+}
+
+.hint {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+/* INSIDE */
+.postcard-inside {
+  transform: rotateY(180deg);
+  background: #fffdf8;
+  text-align: left;
+}
+
+.postcard-inside h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 34px;
+  color: #8ec7f0;
+  -webkit-text-stroke: 1px #1e2a5a;
+  margin-bottom: 10px;
+}
+
+.from {
+  font-family: "Dancing Script", cursive;
+  font-size: 22px;
+  color: #1e2a5a;
+  margin-bottom: 20px;
+}
+
+.message {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #2c2c2c;
+}
+
+/* OPEN STATE */
+.postcard.open .postcard-front {
+  transform: rotateY(-180deg);
+}
+
+.postcard.open .postcard-inside {
+  transform: rotateY(0);
+}

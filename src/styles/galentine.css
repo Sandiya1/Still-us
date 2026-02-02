@@ -1,0 +1,128 @@
+/* PAGE */
+.galentine {
+  height: 100vh;
+  width: 100%;
+  background-repeat: repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* FLOATING HEARTS */
+.hearts::before,
+.hearts::after {
+  content: "💙 💗 💙 💗";
+  position: absolute;
+  inset: 0;
+  font-size: 24px;
+  opacity: 0.25;
+  animation: floatHearts 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatHearts {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-120px);
+  }
+}
+
+/* CARD */
+.gal-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid #1e2a5a; /* navy */
+  border-radius: 36px;
+  padding: 70px 80px;
+  text-align: center;
+  animation: popIn 0.8s ease;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* TEXT */
+.gal-sub {
+  font-family: "Dancing Script", cursive;
+  color: #8ec7f0;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.gal-card h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 48px;
+  color: #8ec7f0; /* baby blue */
+  -webkit-text-stroke: 1.5px #1e2a5a;
+  margin-bottom: 40px;
+}
+
+/* BUTTON AREA */
+.gal-buttons {
+  position: relative;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+/* YES BUTTON */
+.yes-btn {
+  padding: 14px 32px;
+  border-radius: 30px;
+  border: 2px solid #1e2a5a;
+  background: #b7d9f7;
+  color: #1e2a5a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.yes-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(30, 42, 90, 0.25);
+}
+
+/* NO BUTTON (RUNAWAY) */
+.no-btn {
+  position: absolute;
+  left: calc(50% + 110px); /* sits next to YES */
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 2px dashed #1e2a5a;
+  background: rgba(255, 255, 255, 0.85);
+  color: #1e2a5a;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+
+.no-btn:hover {
+  transform: translateY(-50%) rotate(-6deg);
+}
+
+
+/* SUCCESS */
+.success h2 {
+  font-family: "Pacifico", cursive;
+  font-size: 42px;
+  color: #8ec7f0;
+  -webkit-text-stroke: 1.5px #1e2a5a;
+}
